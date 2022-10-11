@@ -62,9 +62,9 @@ function createSchedule(min = 9, max = 17, twelveHr = "AM") {
         // Creating schedule rows
         containerEl.innerHTML += `
         <div class="row">
-            <div class="col-md-1 hour">${trueHr}${twelveHr}</div>
-            <textarea class="col-md-10 description ${timing}" id="hour-${hr}">${event}</textarea>
-            <button class="saveBtn col-md-1"><i class="fas fa-save"></i></button>
+            <div class="col-sm-1 hour">${trueHr}${twelveHr}</div>
+            <textarea class="col-sm-10 description ${timing}" id="hour-${hr}">${event}</textarea>
+            <button class="saveBtn col-sm-1"><i class="fas fa-save"></i></button>
         </div>
         `;
         
