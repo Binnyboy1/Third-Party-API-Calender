@@ -1,7 +1,11 @@
 // DOM elements references
 var containerEl = document.querySelector('.container');
-var notificationEl = document.querySelector('.notification');
-notificationEl.style.visibility = "hidden";
+var notification1El = document.querySelector('.notification1');
+var notification2El = document.querySelector('.notification2');
+notification1El.style.visibility = "hidden";
+notification2El.style.visibility = "hidden";
+notification1El.style.display = "block";
+notification2El.style.display = "none";
 
 // Gathering date info
 var date = moment();
@@ -75,10 +79,17 @@ function createSchedule(min = 9, max = 17, twelveHr = "AM") {
 function saveEvent(textBoxEl) {
     if (textBoxEl.value !== "") {
         localStorage.setItem(textBoxEl.id, textBoxEl.value);
-        notificationEl.style.visibility = "visible";
+        notification1El.style.display = "block";
+        notification2El.style.display = "none";
+        notification1El.style.visibility = "visible";
+        notification2El.style.visibility = "hidden";
         // notificationEl.textContent.style.display = "none";
-    } else {
+    } else if (textBoxEl.value === "" && localStorage.getItem(textBoxEl.id) !== null) {
         localStorage.removeItem(textBoxEl.id);
+        notification1El.style.display = "none";
+        notification2El.style.display = "block";
+        notification1El.style.visibility = "hidden";
+        notification2El.style.visibility = "visible";
     }
 }
 

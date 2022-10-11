@@ -23,7 +23,7 @@ textarea{
   margin: 0;
 }
 
-.notification {
+[class*=notification] {
   margin: 15px 0;
 }
 
