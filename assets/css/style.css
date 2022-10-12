@@ -76,3 +76,45 @@ textarea{
   font-size: 20px;
   transition: all .3s ease-in-out;
 }
+
+/* Adjustments for smaller devices */
+@media screen and (max-width: 992px) {
+  .jumbotron {
+    transform: scale(1, .75);
+    transform-origin: bottom;
+  }
+
+  .jumbotron * {
+    transform: scale(.75, 1);
+  }
+
+  body {
+    position: absolute;
+    top: -60px;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .hour {
+    font-size: 12px;
+  }
+
+  .col-1 {
+    text-align: center;
+    padding: 0;
+  }
+
+  .display-3 {
+    font-size: 2.5rem;
+  }
+
+  .jumbotron > p {
+    font-size: .9rem;
+  }
+
+  [class*=notification] {
+    margin: 8px 0;
+    font-size: 12px;
+  }
+}
